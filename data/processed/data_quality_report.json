@@ -1,0 +1,10 @@
+[
+  {
+    "rows_before":83236,
+    "rows_after":83236,
+    "validation_rows":24,
+    "passed_series":22,
+    "weekly_rows":12434,
+    "trimmed_weeks":9
+  }
+]

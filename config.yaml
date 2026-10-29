@@ -1,0 +1,93 @@
+project:
+  name: agri-price-predictor
+  random_seed: 42
+
+paths:
+  raw_data: data/raw
+  interim_data: data/interim
+  processed_data: data/processed
+  models: models
+
+collection:
+  data_gov_resource_id: 9ef84268-d588-465a-a308-a864a43d0070
+  data_gov_base_url: https://api.data.gov.in/resource
+  page_size: 1000
+  timeout_seconds: 30
+  max_retries: 4
+  backoff_factor: 1.5
+  request_delay_seconds: 0.25
+  lookback_years: 5
+  commodities:
+    - Onion
+    - Potato
+    - Tomato
+    - Tur/Arhar
+    - Moong
+    - Urad
+    - Masoor
+    - Gram/Chana
+  states:
+    - Rajasthan
+    - Madhya Pradesh
+    - Uttar Pradesh
+  weather:
+    enabled: false
+    provider: open_meteo
+    latitude_longitude:
+      Madhya Pradesh: [22.9734, 78.6569]
+      Uttar Pradesh: [26.8467, 80.9462]
+      Rajasthan: [27.0238, 74.2179]
+
+ceda:
+  base_url: https://api.ceda.ashoka.edu.in/v1
+  endpoint: /agmarknet/prices
+  start_date: "2015-01-01"
+  default_window_days: 365
+  request_delay_seconds: 1.0
+  timeout_seconds: 60
+  max_server_retries: 5
+  commodities:
+    Onion: 23
+    Potato: 24
+    Tomato: 78
+    Arhar (Tur/Red Gram) (Whole): 49
+    Green Gram (Moong) (Whole): 9
+    Black Gram (Urad Beans) (Whole): 8
+    Lentil (Masur) (Whole): 63
+    Bengal Gram (Gram) (Whole): 6
+  states:
+    Rajasthan: 8
+    Madhya Pradesh: 23
+    Uttar Pradesh: 9
+
+cleaning:
+  max_series_missing_fraction: 0.40
+  min_history_weeks: 52
+  min_days_per_week: 4
+  outlier_action: flag
+  rolling_window_days: 30
+  weekly_aggregation: W-SUN
+  exclude_series:
+    - commodity: green_gram_moong_whole
+      state: madhya_pradesh
+      reason: source gap of 544 days from 2023-12-21
+    - commodity: black_gram_urad_beans_whole
+      state: madhya_pradesh
+      reason: source gap of 228 days from 2023-12-21
+
+features:
+  lag_days: [1, 7, 14, 30]
+  rolling_windows: [7, 14, 30]
+  festival_months: [10, 11]
+
+split:
+  train_fraction: 0.70
+  validation_fraction: 0.15
+
+model:
+  horizon_weeks: 4
+  random_seed: 42
+
+logging:
+  level: INFO
+  file: logs/agri_price_predictor.log

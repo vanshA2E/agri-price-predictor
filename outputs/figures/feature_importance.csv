@@ -1,0 +1,38 @@
+feature,importance
+numeric__modal_price_lag_52w,1233
+numeric__week_of_year,1062
+numeric__modal_price_rolling_std_13w,752
+numeric__modal_price_rolling_std_8w,661
+numeric__modal_price_rolling_mean_13w,635
+numeric__max_price,627
+numeric__modal_price_rolling_std_4w,560
+numeric__modal_price_lag_8w,559
+numeric__min_price,513
+numeric__modal_price_lag_4w,439
+numeric__modal_price_lag_1w,294
+numeric__modal_price_lag_2w,266
+numeric__modal_price_rolling_mean_8w,265
+numeric__month,223
+numeric__modal_price_rolling_mean_4w,211
+categorical__commodity_Onion,181
+categorical__commodity_Tomato,176
+categorical__state_Madhya Pradesh,106
+categorical__state_Rajasthan,89
+categorical__commodity_Potato,86
+categorical__state_Uttar Pradesh,49
+numeric__is_festival_season,47
+categorical__commodity_Arhar (Tur/Red Gram) (Whole),45
+categorical__commodity_Black Gram (Urad Beans) (Whole),39
+categorical__commodity_Bengal Gram (Gram) (Whole),20
+numeric__is_filled_lag_2w,20
+numeric__is_filled_lag_4w,14
+categorical__commodity_Lentil (Masur) (Whole),12
+categorical__commodity_Green Gram (Moong) (Whole),11
+numeric__is_filled_lag_8w,7
+numeric__is_filled_lag_1w,7
+numeric__is_outlier_lag_52w,1
+numeric__is_outlier_lag_1w,0
+numeric__is_outlier_lag_8w,0
+numeric__is_filled_lag_52w,0
+numeric__is_outlier_lag_2w,0
+numeric__is_outlier_lag_4w,0

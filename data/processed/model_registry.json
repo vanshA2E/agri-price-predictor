@@ -1,0 +1,10 @@
+{
+  "Arhar (Tur/Red Gram) (Whole)": "naive",
+  "Bengal Gram (Gram) (Whole)": "naive",
+  "Black Gram (Urad Beans) (Whole)": "naive",
+  "Green Gram (Moong) (Whole)": "naive",
+  "Lentil (Masur) (Whole)": "commodity_lightgbm",
+  "Onion": "global_lightgbm",
+  "Potato": "commodity_lightgbm",
+  "Tomato": "commodity_lightgbm"
+}
